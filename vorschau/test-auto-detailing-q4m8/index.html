@@ -181,5 +181,11 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
     <span>Impressum und Datenschutz</span>
   </div>
 </footer>
+<script>
+/* Anruf-Buttons: auf dem Handy anrufen, am Computer zum Kontakt-Bereich springen */
+if (!matchMedia("(pointer: coarse)").matches) {
+  document.querySelectorAll('a.btn[href^="tel:"]').forEach(function (a) { a.setAttribute("href", "#kontakt"); });
+}
+</script>
 </body>
 </html>
