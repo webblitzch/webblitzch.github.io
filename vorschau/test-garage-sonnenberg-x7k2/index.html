@@ -89,6 +89,21 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
   .hero .wrap{padding-block:48px}
   section{padding-block:52px}
 }
+
+/* Bildergalerie: Bilder per Klick gross anzeigen */
+.gallery img{cursor:zoom-in;transition:transform .2s ease}
+.gallery img:hover{transform:scale(1.02)}
+.lightbox{position:fixed;inset:0;z-index:100;background:rgba(0,0,0,.92);display:flex;align-items:center;justify-content:center;padding:max(16px,env(safe-area-inset-top)) max(16px,env(safe-area-inset-right)) max(16px,env(safe-area-inset-bottom)) max(16px,env(safe-area-inset-left))}
+.lightbox[hidden]{display:none}
+.lightbox img{max-width:min(1200px,100%);max-height:85vh;width:auto;height:auto;object-fit:contain;border-radius:8px;cursor:zoom-out}
+.lightbox button{position:absolute;background:rgba(255,255,255,.12);color:#fff;border:0;border-radius:999px;width:48px;height:48px;font-size:1.6rem;line-height:1;cursor:pointer;display:grid;place-items:center}
+.lightbox button:hover{background:rgba(255,255,255,.24)}
+.lightbox button:focus-visible{outline:3px solid #fff;outline-offset:2px}
+.lb-close{top:max(16px,env(safe-area-inset-top));right:max(16px,env(safe-area-inset-right))}
+.lb-prev{left:max(16px,env(safe-area-inset-left));top:50%;transform:translateY(-50%)}
+.lb-next{right:max(16px,env(safe-area-inset-right));top:50%;transform:translateY(-50%)}
+.lb-count{position:absolute;bottom:max(16px,env(safe-area-inset-bottom));left:0;right:0;text-align:center;color:#ddd;font-size:.9rem}
+@media (prefers-reduced-motion:reduce){.gallery img{transition:none}.gallery img:hover{transform:none}}
 </style>
 </head>
 <body>
@@ -195,6 +210,55 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
 if (!matchMedia("(pointer: coarse)").matches) {
   document.querySelectorAll('a.btn[href^="tel:"]').forEach(function (a) { a.setAttribute("href", "#kontakt"); });
 }
+</script>
+<div class="lightbox" id="lightbox" hidden role="dialog" aria-modal="true" aria-label="Bild gross anzeigen">
+  <button class="lb-close" type="button" aria-label="Schliessen">&times;</button>
+  <button class="lb-prev" type="button" aria-label="Vorheriges Bild">&#8249;</button>
+  <img alt="">
+  <button class="lb-next" type="button" aria-label="Nächstes Bild">&#8250;</button>
+  <div class="lb-count"></div>
+</div>
+<script>
+/* Bildergalerie: Klick vergrössert, Pfeile/Wischen blättern, Esc oder Klick schliesst */
+(function () {
+  var imgs = Array.prototype.slice.call(document.querySelectorAll(".gallery img"));
+  var box = document.getElementById("lightbox");
+  if (!imgs.length || !box) return;
+  var big = box.querySelector("img"), count = box.querySelector(".lb-count"), i = 0, last = null, startX = null;
+  var many = imgs.length > 1;
+  box.querySelector(".lb-prev").hidden = !many;
+  box.querySelector(".lb-next").hidden = !many;
+  function show(n) {
+    i = (n + imgs.length) % imgs.length;
+    big.src = imgs[i].currentSrc || imgs[i].src;
+    big.alt = imgs[i].alt || "";
+    count.textContent = many ? (i + 1) + " / " + imgs.length : "";
+  }
+  function open(n) { last = document.activeElement; show(n); box.hidden = false; document.body.style.overflow = "hidden"; box.querySelector(".lb-close").focus(); }
+  function close() { box.hidden = true; document.body.style.overflow = ""; if (last) last.focus(); }
+  imgs.forEach(function (img, n) {
+    img.tabIndex = 0;
+    img.setAttribute("role", "button");
+    img.addEventListener("click", function () { open(n); });
+    img.addEventListener("keydown", function (e) { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); open(n); } });
+  });
+  box.querySelector(".lb-close").addEventListener("click", close);
+  box.querySelector(".lb-prev").addEventListener("click", function (e) { e.stopPropagation(); show(i - 1); });
+  box.querySelector(".lb-next").addEventListener("click", function (e) { e.stopPropagation(); show(i + 1); });
+  box.addEventListener("click", function (e) { if (e.target === box || e.target === big) close(); });
+  document.addEventListener("keydown", function (e) {
+    if (box.hidden) return;
+    if (e.key === "Escape") close();
+    if (e.key === "ArrowLeft" && many) show(i - 1);
+    if (e.key === "ArrowRight" && many) show(i + 1);
+  });
+  box.addEventListener("touchstart", function (e) { startX = e.touches[0].clientX; }, { passive: true });
+  box.addEventListener("touchend", function (e) {
+    if (startX === null || !many) return;
+    var dx = e.changedTouches[0].clientX - startX; startX = null;
+    if (Math.abs(dx) > 50) show(dx < 0 ? i + 1 : i - 1);
+  });
+})();
 </script>
 </body>
 </html>
