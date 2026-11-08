@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="de-CH">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>TEST Auto Detailing – Gründliche Fahrzeugpflege innen und aussen</title>
+<meta name="description" content="TEST Auto Detailing: gründliche Fahrzeugpflege innen und aussen, Politur in Perfektion. Jeden Tag 10:00–20:00.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Inter:wght@400;500;600&display=swap">
+<style>
+/* Branche: Auto Detailing. Wunschfarben: Schwarz und Lila. */
+:root{
+  --bg:#0c0b10; --surface:#16141d; --ink:#f3f1f8; --muted:#a8a3b8; --line:#2a2633;
+  --brand:#8b5cf6; --brand-2:#c4b5fd; --brand-ink:#ffffff;
+  --display:"Sora",system-ui,sans-serif; --body:"Inter",system-ui,sans-serif;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 var(--body)}
+img{max-width:100%;display:block}
+a{color:inherit}
+.wrap{max-width:1080px;margin:0 auto;padding-left:max(18px,env(safe-area-inset-left));padding-right:max(18px,env(safe-area-inset-right))}
+h1,h2,h3{font-family:var(--display);line-height:1.1;margin:0;text-wrap:balance}
+h2{font-size:clamp(1.7rem,4vw,2.4rem);font-weight:700}
+h3{font-size:1.15rem;font-weight:600}
+p{margin:0}
+.btn{display:inline-block;background:var(--brand);color:var(--brand-ink);font-weight:600;padding:.9rem 1.4rem;border-radius:999px;text-decoration:none}
+.btn.ghost{background:transparent;color:var(--ink);border:1.5px solid var(--line)}
+.btn:focus-visible,a:focus-visible{outline:3px solid var(--brand-2);outline-offset:3px}
+
+header{position:sticky;top:0;z-index:10;background:rgba(12,11,16,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:14px}
+.logo{font:700 1.15rem/1 var(--display);text-decoration:none;display:flex;align-items:center;gap:.6em}
+.logo img{width:34px;height:34px;border-radius:8px;object-fit:cover;background:var(--surface)}
+nav{display:flex;gap:22px;font-weight:500}
+nav a{text-decoration:none;color:var(--muted)}
+nav a:hover{color:var(--ink)}
+.call{font-weight:600;text-decoration:none;white-space:nowrap;color:var(--brand-2)}
+
+.hero{background:radial-gradient(ellipse 80% 70% at 85% 10%,rgba(139,92,246,.28),transparent 60%),var(--bg)}
+.hero .wrap{display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center;padding-block:80px}
+.eyebrow{font-weight:600;letter-spacing:.14em;text-transform:uppercase;font-size:.78rem;color:var(--brand-2)}
+.hero h1{font-size:clamp(2.3rem,6vw,3.8rem);font-weight:800;margin-top:12px}
+.hero h1 em{font-style:normal;color:var(--brand-2)}
+.hero p.lead{margin-top:18px;font-size:1.15rem;color:var(--muted);max-width:38ch}
+.hero .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.hero-card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:24px;display:flex;flex-direction:column;gap:14px}
+.hero-card .label{font-size:.8rem;color:var(--brand-2);font-weight:600;letter-spacing:.08em;text-transform:uppercase}
+.hero-card .row{display:flex;justify-content:space-between;gap:12px;font-variant-numeric:tabular-nums}
+.hero-card b{font-weight:600}
+
+section{padding-block:72px}
+.head{display:flex;flex-direction:column;gap:10px;margin-bottom:36px;max-width:46ch}
+.head p{color:var(--muted)}
+.services{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.service{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:24px;display:flex;flex-direction:column;gap:8px}
+.service p{color:var(--muted);font-size:.95rem}
+.service .num{font:700 .78rem/1 var(--display);color:var(--brand-2);letter-spacing:.12em}
+
+.about{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.about p{color:var(--muted);margin-top:16px}
+.about img,.gallery img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:14px;background:var(--surface)}
+
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.gallery img{aspect-ratio:1}
+
+.contact{background:var(--surface);border-top:1px solid var(--line)}
+.contact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.contact-grid > div{display:flex;flex-direction:column;gap:6px;min-width:0;overflow-wrap:anywhere}
+.contact-grid .label{font-size:.78rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.map-link{margin-top:6px;font-weight:600;color:var(--brand-2)}
+
+footer{padding-block:28px;font-size:.85rem;color:var(--muted);border-top:1px solid var(--line)}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
+
+.preview-bar{background:#fff6cc;color:#18222e;font-size:.85rem;text-align:center;padding:8px 16px}
+
+@media (max-width:860px){
+  nav{display:none}
+  .hero .wrap,.about{grid-template-columns:1fr}
+  .services,.contact-grid{grid-template-columns:1fr}
+  .gallery{grid-template-columns:repeat(2,1fr)}
+  .hero .wrap{padding-block:52px}
+  section{padding-block:52px}
+}
+</style>
+</head>
+<body>
+<div class="preview-bar">Entwurf von Webblitz – nur zur Ansicht</div>
+
+<header>
+  <div class="wrap">
+    <a class="logo" href="#"><img src="https://storage.tally.so/private/Screenshot-2023-06-25-020037.png?id=v50bRv&amp;accessToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6InY1MGJSdiIsImZvcm1JZCI6InhWckFlRyIsImlhdCI6MTc5NDE3NzE0MH0.7WVhNOnhnrRDmkvN4m8yqfzvSjiEPcDPLo4Zqc24Fxk&amp;signature=5753f8ed5c4754853f26582d34d871c3873d80c30761b1e8ee76f5bd5c40063e" alt="">TEST Auto Detailing</a>
+    <nav><a href="#leistungen">Leistungen</a><a href="#ueber-uns">Über uns</a><a href="#kontakt">Kontakt</a></nav>
+    <a class="call" href="tel:+41764661780">076 466 17 80</a>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow">Auto Detailing</span>
+      <h1>Glanz, der <em>auffällt.</em></h1>
+      <p class="lead">Gründliche Fahrzeugpflege innen und aussen. Unsere Spezialität ist die Politur, die Ihr Auto wieder wie neu aussehen lässt.</p>
+      <div class="cta">
+        <a class="btn" href="tel:+41764661780">Termin vereinbaren</a>
+        <a class="btn ghost" href="#leistungen">Leistungen ansehen</a>
+      </div>
+    </div>
+    <div class="hero-card" aria-label="Öffnungszeiten">
+      <span class="label">Öffnungszeiten</span>
+      <div class="row"><span>Montag – Sonntag</span><b>10:00 – 20:00</b></div>
+      <p style="color:var(--muted);font-size:.95rem">Jeden Tag für Sie da, auch am Wochenende.</p>
+    </div>
+  </div>
+</div>
+
+<section id="leistungen">
+  <div class="wrap">
+    <div class="head">
+      <h2>Unsere Leistungen</h2>
+      <p>Von der gründlichen Wäsche bis zur Politur. Wir behandeln Ihr Fahrzeug mit der Sorgfalt, die es verdient.</p>
+    </div>
+    <div class="services">
+      <div class="service"><span class="num">AUSSEN</span><h3>Aussenreinigung</h3><p>Gründliche Handwäsche, die Schmutz und Ablagerungen schonend und vollständig entfernt.</p></div>
+      <div class="service"><span class="num">INNEN</span><h3>Innenreinigung</h3><p>Sitze, Teppiche, Armaturen und Scheiben. Bis in jede Ecke sauber.</p></div>
+      <div class="service"><span class="num">POLITUR</span><h3>Politur</h3><p>Unsere Spezialität. Wir bringen den Lack wieder zum Glänzen und lassen Ihr Auto herausstechen.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="ueber-uns" style="padding-top:0">
+  <div class="wrap about">
+    <div>
+      <h2>Perfektion bis ins Detail</h2>
+      <p>Bei uns wird jedes Fahrzeug von innen und aussen perfekt und gründlich gepflegt. Was uns besonders auszeichnet, ist unsere Politur: Damit sticht Ihr Auto auf der Strasse heraus.</p>
+    </div>
+    <img src="https://storage.tally.so/private/Screenshot-2023-10-06-020645.png?id=rM0WXl&amp;accessToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6InJNMFdYbCIsImZvcm1JZCI6InhWckFlRyIsImlhdCI6MTc5NDE3NzE0MH0.e8MMQ2raoSbpRQ097Udn7WJ43giB-djMiw1KABdJbSY&amp;signature=35dbc2f8a0fba802961496170789d767ce9b2000d65f03023758868a8afbefcf" alt="Einblick in unsere Arbeit">
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="head"><h2>Einblick in unsere Arbeit</h2></div>
+    <div class="gallery">
+      <img src="https://storage.tally.so/private/Screenshot-2023-10-06-020645.png?id=rM0WXl&amp;accessToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6InJNMFdYbCIsImZvcm1JZCI6InhWckFlRyIsImlhdCI6MTc5NDE3NzE0MH0.e8MMQ2raoSbpRQ097Udn7WJ43giB-djMiw1KABdJbSY&amp;signature=35dbc2f8a0fba802961496170789d767ce9b2000d65f03023758868a8afbefcf" alt="Foto 1">
+      <img src="https://storage.tally.so/private/Screenshot-2023-12-12-104227.png?id=6E15qP&amp;accessToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZFMTVxUCIsImZvcm1JZCI6InhWckFlRyIsImlhdCI6MTc5NDE3NzE0MH0.TN3VHLFylyBFuq6QHkE9Ypxsn3dngezM4btfpPVM3JA&amp;signature=db8de765d3b4862aa26ea483e07b80401034ab9c850861fe77c515d23b330620" alt="Foto 2">
+      <img src="https://storage.tally.so/private/Screenshot-2024-07-01-080101.png?id=g6QrBl&amp;accessToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Imc2UXJCbCIsImZvcm1JZCI6InhWckFlRyIsImlhdCI6MTc5NDE3NzE0MH0.7ZM1eAw1mN_emct8_XC0lkUxOPeg_O3XuJclXGcp4sI&amp;signature=2df9300d20bf494192bfc7f4101c97f7827342f9969a5f987276ac59f5869871" alt="Foto 3">
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="kontakt">
+  <div class="wrap">
+    <div class="head"><h2>Kontakt</h2></div>
+    <div class="contact-grid">
+      <div>
+        <span class="label">Adresse</span>
+        <p>TEST Auto Detailing<br>Kohlgrubenweg 12</p>
+        <a class="map-link" href="https://maps.google.com/?q=Kohlgrubenweg+12" target="_blank" rel="noopener">Route planen</a>
+      </div>
+      <div>
+        <span class="label">Telefon und E-Mail</span>
+        <p><a href="tel:+41764661780">076 466 17 80</a><br><a href="mailto:luka.rajilic25@gmail.com">luka.rajilic25@gmail.com</a></p>
+      </div>
+      <div>
+        <span class="label">Öffnungszeiten</span>
+        <p>Montag – Sonntag<br>10:00 – 20:00</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 TEST Auto Detailing</span>
+    <span>Impressum und Datenschutz</span>
+  </div>
+</footer>
+</body>
+</html>
