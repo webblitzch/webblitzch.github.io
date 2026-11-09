@@ -1,0 +1,338 @@
+<!doctype html>
+<html lang="de-CH">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Garage Sonnenberg – Service und Reparaturen für alle Marken</title>
+<meta name="description" content="Garage Sonnenberg: Service, Reparaturen, Reifenwechsel und MFK-Vorbereitung für alle Automarken. Mo–Fr 07:30–18:00, Sa 08:00–12:00.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&family=Inter:wght@400;500;600&display=swap">
+<style>
+/* Branche: Autogarage. Farben: Anthrazit + Signalrot. Struktur bleibt für alle Kunden gleich. */
+:root{
+  --bg:#ffffff; --surface:#f3f4f6; --ink:#16191d; --muted:#5b6370; --line:#e1e4e8;
+  --brand:#c8102e; --brand-ink:#ffffff; --dark:#1d2228; --dark-ink:#f4f5f7;
+  --display:"Archivo",system-ui,sans-serif; --body:"Inter",system-ui,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 var(--body)}
+img{max-width:100%;display:block}
+a{color:inherit}
+.wrap{max-width:1080px;margin:0 auto;padding-left:max(18px,env(safe-area-inset-left));padding-right:max(18px,env(safe-area-inset-right))}
+h1,h2,h3{font-family:var(--display);line-height:1.1;margin:0;text-wrap:balance}
+h2{font-size:clamp(1.7rem,4vw,2.4rem);font-weight:800}
+h3{font-size:1.15rem;font-weight:700}
+p{margin:0}
+.btn{display:inline-block;background:var(--brand);color:var(--brand-ink);font-weight:600;padding:.9rem 1.4rem;border-radius:8px;text-decoration:none}
+.btn.ghost{background:transparent;color:inherit;border:2px solid currentColor}
+.btn:focus-visible,a:focus-visible{outline:3px solid var(--brand);outline-offset:3px}
+
+header{position:sticky;top:0;z-index:10;background:var(--bg);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:14px}
+.logo{font:800 1.2rem/1 var(--display);text-decoration:none;display:flex;align-items:center;gap:.5em}
+.logo-mark{width:30px;height:30px;border-radius:6px;background:var(--brand);color:var(--brand-ink);display:grid;place-items:center;font-size:.9rem}
+nav{display:flex;gap:22px;font-weight:500}
+nav a{text-decoration:none;color:var(--muted)}
+nav a:hover{color:var(--ink)}
+.call{font-weight:600;text-decoration:none;white-space:nowrap}
+
+.hero{background:var(--dark);color:var(--dark-ink)}
+.hero .wrap{display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center;padding-block:72px}
+.hero .eyebrow{font-weight:600;letter-spacing:.12em;text-transform:uppercase;font-size:.8rem;color:#ff8a9a}
+.hero h1{font-size:clamp(2.3rem,6vw,3.8rem);font-weight:800;margin-top:12px}
+.hero p.lead{margin-top:18px;font-size:1.15rem;color:#c4cad3;max-width:38ch}
+.hero .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.hero-card{background:#262c33;border-radius:14px;padding:24px;display:flex;flex-direction:column;gap:14px}
+.hero-card .row{display:flex;justify-content:space-between;gap:12px;border-bottom:1px solid #353c45;padding-bottom:10px;font-variant-numeric:tabular-nums}
+.hero-card .row:last-child{border:0;padding:0}
+.hero-card b{font-weight:600}
+.open{display:inline-flex;align-items:center;gap:.5em;font-size:.85rem;color:#9fe0b0}
+.open::before{content:"";width:8px;height:8px;border-radius:50%;background:#3ccf6b}
+
+section{padding-block:72px}
+.head{display:flex;flex-direction:column;gap:10px;margin-bottom:36px;max-width:46ch}
+.head p{color:var(--muted)}
+.services{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.service{background:var(--surface);border-radius:12px;padding:24px;display:flex;flex-direction:column;gap:8px}
+.service p{color:var(--muted);font-size:.95rem}
+.service .num{font:800 .8rem/1 var(--display);color:var(--brand);letter-spacing:.1em}
+
+.about{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.about ul{margin:20px 0 0;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px}
+.about li{padding-left:1.6em;position:relative}
+.about li::before{content:"";position:absolute;left:0;top:.45em;width:.9em;height:.55em;border-left:3px solid var(--brand);border-bottom:3px solid var(--brand);transform:rotate(-45deg)}
+.photo{aspect-ratio:4/3;border-radius:14px;background:linear-gradient(135deg,#2b323a,#4a525c);display:grid;place-items:center;color:#aab2bd;font-size:.9rem;text-align:center;padding:20px}
+
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.gallery .photo{aspect-ratio:1}
+
+.contact{background:var(--surface)}
+.contact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.contact-grid > div{display:flex;flex-direction:column;gap:6px;min-width:0}
+.contact-grid .label{font-size:.78rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.hours{display:grid;grid-template-columns:auto 1fr;gap:4px 16px;font-variant-numeric:tabular-nums}
+.map-link{margin-top:6px;font-weight:600;color:var(--brand)}
+
+footer{padding-block:28px;font-size:.85rem;color:var(--muted);border-top:1px solid var(--line)}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
+
+.preview-bar{background:#fff6cc;color:#18222e;font-size:.85rem;text-align:center;padding:8px 16px}
+
+@media (max-width:860px){
+  nav{display:none}
+  .hero .wrap,.about{grid-template-columns:1fr}
+  .services,.contact-grid{grid-template-columns:1fr}
+  .gallery{grid-template-columns:repeat(2,1fr)}
+  .hero .wrap{padding-block:48px}
+  section{padding-block:52px}
+}
+
+/* Bildergalerie: Bilder per Klick gross anzeigen */
+.gallery img{cursor:zoom-in;transition:transform .2s ease}
+.gallery img:hover{transform:scale(1.02)}
+.lightbox{position:fixed;inset:0;z-index:100;background:rgba(0,0,0,.92);display:flex;align-items:center;justify-content:center;padding:max(16px,env(safe-area-inset-top)) max(16px,env(safe-area-inset-right)) max(16px,env(safe-area-inset-bottom)) max(16px,env(safe-area-inset-left))}
+.lightbox[hidden]{display:none}
+.lightbox img{max-width:min(1200px,100%);max-height:85vh;width:auto;height:auto;object-fit:contain;border-radius:8px;cursor:zoom-out}
+.lightbox button{position:absolute;background:rgba(255,255,255,.12);color:#fff;border:0;border-radius:999px;width:48px;height:48px;font-size:1.6rem;line-height:1;cursor:pointer;display:grid;place-items:center}
+.lightbox button:hover{background:rgba(255,255,255,.24)}
+.lightbox button:focus-visible{outline:3px solid #fff;outline-offset:2px}
+.lb-close{top:max(16px,env(safe-area-inset-top));right:max(16px,env(safe-area-inset-right))}
+.lb-prev{left:max(16px,env(safe-area-inset-left));top:50%;transform:translateY(-50%)}
+.lb-next{right:max(16px,env(safe-area-inset-right));top:50%;transform:translateY(-50%)}
+.lb-count{position:absolute;bottom:max(16px,env(safe-area-inset-bottom));left:0;right:0;text-align:center;color:#ddd;font-size:.9rem}
+@media (prefers-reduced-motion:reduce){.gallery img{transition:none}.gallery img:hover{transform:none}}
+
+/* Handy-Menü */
+.menu-btn{display:none;width:44px;height:44px;border:0;background:transparent;color:inherit;cursor:pointer;border-radius:10px;position:relative}
+.menu-btn span{position:absolute;left:11px;right:11px;height:2px;background:currentColor;border-radius:2px;transition:transform .35s cubic-bezier(.2,.8,.2,1),opacity .2s}
+.menu-btn span:nth-child(1){top:15px}.menu-btn span:nth-child(2){top:21px}.menu-btn span:nth-child(3){top:27px}
+.menu-open .menu-btn span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+.menu-open .menu-btn span:nth-child(2){opacity:0}
+.menu-open .menu-btn span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+.menu-btn:focus-visible{outline:3px solid currentColor;outline-offset:2px}
+.mobile-menu{display:none}
+@media (max-width:860px){
+  .menu-btn{display:block}
+  header .call{display:none}
+  .mobile-menu{display:block;overflow:hidden;max-height:0;transition:max-height .45s cubic-bezier(.2,.8,.2,1)}
+  .menu-open .mobile-menu{max-height:420px}
+  .mobile-menu nav{display:flex;flex-direction:column;gap:0;padding:4px max(18px,env(safe-area-inset-left)) 18px}
+  .mobile-menu a{display:block;padding:14px 0;font-size:1.15rem;font-weight:600;text-decoration:none;border-bottom:1px solid rgba(127,127,127,.2);opacity:0;transform:translateY(-8px);transition:opacity .35s ease,transform .35s ease}
+  .menu-open .mobile-menu a{opacity:1;transform:none}
+  .menu-open .mobile-menu a:nth-child(2){transition-delay:.05s}
+  .menu-open .mobile-menu a:nth-child(3){transition-delay:.1s}
+  .menu-open .mobile-menu a:nth-child(4){transition-delay:.15s}
+  .menu-open .mobile-menu a:nth-child(5){transition-delay:.2s}
+}
+/* Sanfte Animationen beim Scrollen */
+.js-anim .reveal{opacity:0;transform:translateY(28px);transition:opacity .8s cubic-bezier(.2,.8,.2,1),transform .8s cubic-bezier(.2,.8,.2,1)}
+.js-anim .reveal.in{opacity:1;transform:none}
+.service{transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s ease}
+.service:hover{transform:translateY(-4px);box-shadow:0 14px 30px -18px rgba(0,0,0,.35)}
+.btn{transition:transform .25s ease,filter .25s ease}
+.btn:hover{transform:translateY(-2px);filter:brightness(1.06)}
+@media (prefers-reduced-motion:reduce){
+  .js-anim .reveal{opacity:1;transform:none;transition:none}
+  .service,.btn,.menu-btn span,.mobile-menu,.mobile-menu a{transition:none}
+  .service:hover,.btn:hover{transform:none}
+}
+</style>
+</head>
+<body>
+<div class="preview-bar">Beispiel-Design von <a href="https://webblitzch.github.io" style="color:inherit">Webblitz</a> – fiktiver Betrieb</div>
+
+<header>
+  <div class="wrap">
+    <a class="logo" href="#"><span class="logo-mark">GS</span>Garage Sonnenberg</a>
+    <nav><a href="#leistungen">Leistungen</a><a href="#ueber-uns">Über uns</a><a href="#kontakt">Kontakt</a></nav>
+    <a class="call" href="tel:+41560000000">056 000 00 00</a>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow">Autogarage in Würenlos</span>
+      <h1>Ihr Auto in guten Händen.</h1>
+      <p class="lead">Service, Reparaturen und MFK-Vorbereitung für alle Marken. Ehrliche Beratung und faire Preise, direkt aus dem Dorf.</p>
+      <div class="cta">
+        <a class="btn" href="tel:+41560000000">Termin vereinbaren</a>
+        <a class="btn ghost" href="#leistungen">Unsere Leistungen</a>
+      </div>
+    </div>
+    <div class="hero-card" aria-label="Öffnungszeiten">
+      <span class="open">Öffnungszeiten</span>
+      <div class="row"><span>Montag – Freitag</span><b>07:30 – 18:00</b></div>
+      <div class="row"><span>Samstag</span><b>08:00 – 12:00</b></div>
+      <div class="row"><span>Sonntag</span><b>geschlossen</b></div>
+    </div>
+  </div>
+</div>
+
+<section id="leistungen">
+  <div class="wrap">
+    <div class="head">
+      <h2>Unsere Leistungen</h2>
+      <p>Vom kleinen Service bis zur grossen Reparatur. Wir arbeiten an allen Marken und Modellen.</p>
+    </div>
+    <div class="services">
+      <div class="service"><span class="num">SERVICE</span><h3>Service und Wartung</h3><p>Ölwechsel, Bremsen, Filter und alles nach Herstellervorgabe. Ihre Garantie bleibt erhalten.</p></div>
+      <div class="service"><span class="num">MFK</span><h3>MFK-Vorbereitung</h3><p>Wir prüfen Ihr Auto vor der Motorfahrzeugkontrolle und führen es auf Wunsch auch vor.</p></div>
+      <div class="service"><span class="num">REIFEN</span><h3>Reifenwechsel und Einlagerung</h3><p>Sommer- und Winterreifen wechseln, auswuchten und bei uns sauber einlagern.</p></div>
+      <div class="service"><span class="num">REPARATUR</span><h3>Reparaturen</h3><p>Motor, Getriebe, Auspuff und Elektronik. Mit Kostenvoranschlag, bevor wir loslegen.</p></div>
+      <div class="service"><span class="num">DIAGNOSE</span><h3>Fehlerdiagnose</h3><p>Leuchtet eine Warnlampe? Wir lesen den Fehlerspeicher aus und finden die Ursache.</p></div>
+      <div class="service"><span class="num">KLIMA</span><h3>Klimaservice</h3><p>Klimaanlage prüfen, reinigen und auffüllen, damit es im Sommer wieder kühl wird.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="ueber-uns" style="padding-top:0">
+  <div class="wrap about">
+    <div>
+      <h2>Ein Familienbetrieb mit Erfahrung</h2>
+      <p style="margin-top:16px;color:var(--muted)">Seit über 30 Jahren kümmern wir uns um die Autos in der Region. Bei uns sprechen Sie direkt mit dem Mechaniker, der an Ihrem Auto arbeitet.</p>
+      <ul>
+        <li>Alle Marken, auch ältere Fahrzeuge</li>
+        <li>Ersatzwagen auf Anfrage</li>
+        <li>Kostenvoranschlag vor jeder grösseren Arbeit</li>
+      </ul>
+    </div>
+    <div class="photo">Hier kommt ein Foto eurer Werkstatt</div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="head"><h2>Einblick in die Werkstatt</h2></div>
+    <div class="gallery">
+      <div class="photo">Foto 1</div><div class="photo">Foto 2</div><div class="photo">Foto 3</div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="kontakt">
+  <div class="wrap">
+    <div class="head"><h2>Kontakt und Anfahrt</h2></div>
+    <div class="contact-grid">
+      <div>
+        <span class="label">Adresse</span>
+        <p>Garage Sonnenberg<br>Musterstrasse 1<br>5436 Würenlos</p>
+        <a class="map-link" href="https://maps.google.com/?q=Musterstrasse+1+5436+W%C3%BCrenlos" target="_blank" rel="noopener">Route planen</a>
+      </div>
+      <div>
+        <span class="label">Telefon und E-Mail</span>
+        <p><a href="tel:+41560000000">056 000 00 00</a><br><a href="mailto:info@garage-sonnenberg.ch">info@garage-sonnenberg.ch</a></p>
+      </div>
+      <div>
+        <span class="label">Öffnungszeiten</span>
+        <div class="hours"><span>Mo – Fr</span><span>07:30 – 18:00</span><span>Sa</span><span>08:00 – 12:00</span><span>So</span><span>geschlossen</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Garage Sonnenberg · Musterstrasse 1, 5436 Würenlos</span>
+    <span>Impressum und Datenschutz</span>
+  </div>
+</footer>
+<script>
+/* Anruf-Buttons: auf dem Handy anrufen, am Computer zum Kontakt-Bereich springen */
+if (!matchMedia("(pointer: coarse)").matches) {
+  document.querySelectorAll('a.btn[href^="tel:"]').forEach(function (a) { a.setAttribute("href", "#kontakt"); });
+}
+</script>
+<div class="lightbox" id="lightbox" hidden role="dialog" aria-modal="true" aria-label="Bild gross anzeigen">
+  <button class="lb-close" type="button" aria-label="Schliessen">&times;</button>
+  <button class="lb-prev" type="button" aria-label="Vorheriges Bild">&#8249;</button>
+  <img alt="">
+  <button class="lb-next" type="button" aria-label="Nächstes Bild">&#8250;</button>
+  <div class="lb-count"></div>
+</div>
+<script>
+/* Bildergalerie: Klick vergrössert, Pfeile/Wischen blättern, Esc oder Klick schliesst */
+(function () {
+  var imgs = Array.prototype.slice.call(document.querySelectorAll(".gallery img"));
+  var box = document.getElementById("lightbox");
+  if (!imgs.length || !box) return;
+  var big = box.querySelector("img"), count = box.querySelector(".lb-count"), i = 0, last = null, startX = null;
+  var many = imgs.length > 1;
+  box.querySelector(".lb-prev").hidden = !many;
+  box.querySelector(".lb-next").hidden = !many;
+  function show(n) {
+    i = (n + imgs.length) % imgs.length;
+    big.src = imgs[i].currentSrc || imgs[i].src;
+    big.alt = imgs[i].alt || "";
+    count.textContent = many ? (i + 1) + " / " + imgs.length : "";
+  }
+  function open(n) { last = document.activeElement; show(n); box.hidden = false; document.body.style.overflow = "hidden"; box.querySelector(".lb-close").focus(); }
+  function close() { box.hidden = true; document.body.style.overflow = ""; if (last) last.focus(); }
+  imgs.forEach(function (img, n) {
+    img.tabIndex = 0;
+    img.setAttribute("role", "button");
+    img.addEventListener("click", function () { open(n); });
+    img.addEventListener("keydown", function (e) { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); open(n); } });
+  });
+  box.querySelector(".lb-close").addEventListener("click", close);
+  box.querySelector(".lb-prev").addEventListener("click", function (e) { e.stopPropagation(); show(i - 1); });
+  box.querySelector(".lb-next").addEventListener("click", function (e) { e.stopPropagation(); show(i + 1); });
+  box.addEventListener("click", function (e) { if (e.target === box || e.target === big) close(); });
+  document.addEventListener("keydown", function (e) {
+    if (box.hidden) return;
+    if (e.key === "Escape") close();
+    if (e.key === "ArrowLeft" && many) show(i - 1);
+    if (e.key === "ArrowRight" && many) show(i + 1);
+  });
+  box.addEventListener("touchstart", function (e) { startX = e.touches[0].clientX; }, { passive: true });
+  box.addEventListener("touchend", function (e) {
+    if (startX === null || !many) return;
+    var dx = e.changedTouches[0].clientX - startX; startX = null;
+    if (Math.abs(dx) > 50) show(dx < 0 ? i + 1 : i - 1);
+  });
+})();
+</script>
+<script>
+/* Handy-Menü öffnen und schliessen */
+(function () {
+  var header = document.querySelector("header"), nav = header && header.querySelector("nav");
+  if (!nav) return;
+  var btn = document.createElement("button");
+  btn.className = "menu-btn"; btn.type = "button";
+  btn.setAttribute("aria-label", "Menü öffnen"); btn.setAttribute("aria-expanded", "false");
+  btn.innerHTML = "<span></span><span></span><span></span>";
+  header.querySelector(".wrap").appendChild(btn);
+  var panel = document.createElement("div");
+  panel.className = "mobile-menu"; panel.id = "mobile-menu";
+  var copy = nav.cloneNode(true);
+  var call = header.querySelector(".call");
+  if (call) { var c = call.cloneNode(true); c.className = ""; c.textContent = "Anrufen: " + call.textContent; copy.appendChild(c); }
+  panel.appendChild(copy); header.appendChild(panel);
+  btn.setAttribute("aria-controls", "mobile-menu");
+  function set(open) {
+    header.classList.toggle("menu-open", open);
+    btn.setAttribute("aria-expanded", open ? "true" : "false");
+    btn.setAttribute("aria-label", open ? "Menü schliessen" : "Menü öffnen");
+  }
+  btn.addEventListener("click", function () { set(!header.classList.contains("menu-open")); });
+  panel.addEventListener("click", function (e) { if (e.target.closest("a")) set(false); });
+  document.addEventListener("keydown", function (e) { if (e.key === "Escape") set(false); });
+})();
+/* Bereiche gleiten beim Scrollen sanft ein */
+(function () {
+  if (!("IntersectionObserver" in window)) return;
+  var els = document.querySelectorAll(".head, .service, .about > *, .gallery > *, .contact-grid > div, .hero-card");
+  document.documentElement.classList.add("js-anim");
+  els.forEach(function (el, i) { el.classList.add("reveal"); el.style.transitionDelay = (i % 3) * 0.08 + "s"; });
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } });
+  }, { threshold: 0.12, rootMargin: "0px 0px -40px 0px" });
+  els.forEach(function (el) { io.observe(el); });
+  setTimeout(function () { els.forEach(function (el) { el.classList.add("in"); }); }, 4000);
+})();
+</script>
+</body>
+</html>
