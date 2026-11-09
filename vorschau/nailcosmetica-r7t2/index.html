@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="de-CH">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>nailcosmetica – Nagelkosmetik in Aarau</title>
+<meta name="description" content="nailcosmetica claudia ruhlé: persönliche Nagelkosmetik in Aarau. Termine per Telefon oder E-Mail.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Jost:wght@400;500;600&display=swap">
+<style>
+/* Branche: Nagelkosmetik. Palette: warmes Rosé, Nude, tiefes Pflaume. */
+:root{
+  --bg:#fbf7f5; --surface:#f3e9e5; --ink:#2b1f24; --muted:#6f5f65; --line:#e6d7d1;
+  --brand:#8a3b5c; --brand-soft:#e9c9d3; --brand-ink:#ffffff;
+  --display:"Cormorant Garamond",Georgia,serif; --body:"Jost",system-ui,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.65 var(--body)}
+img{max-width:100%;display:block}
+a{color:inherit}
+.wrap{max-width:1080px;margin:0 auto;padding-left:max(18px,env(safe-area-inset-left));padding-right:max(18px,env(safe-area-inset-right))}
+h1,h2,h3{font-family:var(--display);line-height:1.08;margin:0;text-wrap:balance;font-weight:600}
+h2{font-size:clamp(2rem,4.5vw,2.8rem)}
+h3{font-size:1.45rem}
+p{margin:0}
+.btn{display:inline-block;background:var(--brand);color:var(--brand-ink);font-weight:500;padding:.9rem 1.5rem;border-radius:999px;text-decoration:none;letter-spacing:.02em}
+.btn.ghost{background:transparent;color:var(--brand);border:1.5px solid var(--brand)}
+.btn:focus-visible,a:focus-visible{outline:3px solid var(--brand);outline-offset:3px}
+
+header{position:sticky;top:0;z-index:10;background:rgba(251,247,245,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:14px}
+.logo{font:600 1.5rem/1 var(--display);text-decoration:none;letter-spacing:.01em}
+.logo span{color:var(--brand);font-style:italic}
+nav{display:flex;gap:24px;font-weight:500;font-size:.95rem}
+nav a{text-decoration:none;color:var(--muted)}
+nav a:hover{color:var(--ink)}
+.call{font-weight:600;text-decoration:none;white-space:nowrap;color:var(--brand)}
+
+.hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center;padding-block:80px}
+.eyebrow{font-weight:500;letter-spacing:.18em;text-transform:uppercase;font-size:.75rem;color:var(--brand)}
+.hero h1{font-size:clamp(2.6rem,7vw,4.4rem);margin-top:14px}
+.hero h1 em{color:var(--brand)}
+.hero p.lead{margin-top:20px;font-size:1.12rem;color:var(--muted);max-width:36ch}
+.hero .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.hero-card{background:var(--surface);border-radius:200px 200px 24px 24px;padding:56px 28px 32px;display:flex;flex-direction:column;gap:14px;text-align:center}
+.hero-card .label{font-size:.75rem;letter-spacing:.16em;text-transform:uppercase;color:var(--brand);font-weight:600}
+.hero-card p{color:var(--muted)}
+.hero-card b{display:block;font:600 1.6rem/1.2 var(--display);color:var(--ink)}
+
+section{padding-block:76px}
+.head{display:flex;flex-direction:column;gap:10px;margin-bottom:36px;max-width:46ch}
+.head p{color:var(--muted)}
+.services{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.service{background:#fff;border:1px solid var(--line);border-radius:18px;padding:28px;display:flex;flex-direction:column;gap:10px}
+.service p{color:var(--muted);font-size:.97rem}
+.service .num{font:italic 500 1.1rem/1 var(--display);color:var(--brand)}
+
+.about{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.about p{color:var(--muted);margin-top:16px}
+.photo{aspect-ratio:4/5;border-radius:200px 200px 18px 18px;background:linear-gradient(160deg,var(--brand-soft),var(--surface));display:grid;place-items:center;color:var(--muted);font-size:.9rem;text-align:center;padding:24px}
+
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.gallery .photo{aspect-ratio:1;border-radius:16px}
+
+.contact{background:var(--surface)}
+.contact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.contact-grid > div{display:flex;flex-direction:column;gap:6px;min-width:0;overflow-wrap:anywhere}
+.contact-grid .label{font-size:.75rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--brand)}
+.map-link{margin-top:6px;font-weight:600;color:var(--brand)}
+
+footer{padding-block:28px;font-size:.85rem;color:var(--muted);border-top:1px solid var(--line)}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
+
+.preview-bar{background:#2b1f24;color:#f3e9e5;font-size:.85rem;text-align:center;padding:8px 16px}
+.preview-bar a{color:#e9c9d3}
+
+@media (max-width:860px){
+  nav{display:none}
+  .hero .wrap,.about{grid-template-columns:1fr}
+  .services,.contact-grid{grid-template-columns:1fr}
+  .gallery{grid-template-columns:repeat(2,1fr)}
+  .hero .wrap{padding-block:52px}
+  section{padding-block:56px}
+}
+</style>
+</head>
+<body>
+<div class="preview-bar">Unverbindlicher Vorschlag von <a href="https://webblitzch.github.io">Webblitz</a> – nur zur Ansicht</div>
+
+<header>
+  <div class="wrap">
+    <a class="logo" href="#">nail<span>cosmetica</span></a>
+    <nav><a href="#angebot">Angebot</a><a href="#ueber-mich">Über mich</a><a href="#kontakt">Kontakt</a></nav>
+    <a class="call" href="tel:+41787072373">078 707 23 73</a>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow">Nagelkosmetik in Aarau</span>
+      <h1>Schöne Nägel, <em>persönlich</em> betreut.</h1>
+      <p class="lead">Professionelle Nagelpflege, abgestimmt auf Ihre Wünsche. Mit Zeit für eine ehrliche Beratung.</p>
+      <div class="cta">
+        <a class="btn" href="tel:+41787072373">Termin vereinbaren</a>
+        <a class="btn ghost" href="#angebot">Angebot ansehen</a>
+      </div>
+    </div>
+    <div class="hero-card">
+      <span class="label">Termine</span>
+      <b>nach Vereinbarung</b>
+      <p>Per Telefon oder E-Mail.<br>Ich melde mich gerne bei Ihnen.</p>
+    </div>
+  </div>
+</div>
+
+<section id="angebot">
+  <div class="wrap">
+    <div class="head">
+      <h2>Mein Angebot</h2>
+      <p>Hier stehen später Ihre Behandlungen und Preise. Diese Beispiele passe ich gerne an Ihr Angebot an.</p>
+    </div>
+    <div class="services">
+      <div class="service"><span class="num">i.</span><h3>Beratung</h3><p>Gemeinsam finden wir heraus, was zu Ihren Nägeln und Ihrem Alltag passt.</p></div>
+      <div class="service"><span class="num">ii.</span><h3>Nagelmodellage</h3><p>Natürlich wirkende, gepflegte Nägel in Form und Länge nach Ihrem Wunsch.</p></div>
+      <div class="service"><span class="num">iii.</span><h3>Pflege und Design</h3><p>Von dezent bis auffällig. Farbe und Gestaltung ganz nach Ihrem Geschmack.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="ueber-mich" style="padding-top:0">
+  <div class="wrap about">
+    <div class="photo">Hier kommt ein Foto von Ihnen oder Ihrem Studio</div>
+    <div>
+      <h2>Claudia Ruhlé</h2>
+      <p>In meinem Studio in Aarau nehme ich mir Zeit für jede Kundin. Hier steht später ein kurzer Text über Sie, Ihre Erfahrung und was Ihnen bei Ihrer Arbeit wichtig ist.</p>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="head"><h2>Einblicke</h2><p>Platz für Fotos Ihrer schönsten Arbeiten.</p></div>
+    <div class="gallery">
+      <div class="photo">Foto 1</div><div class="photo">Foto 2</div><div class="photo">Foto 3</div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="kontakt">
+  <div class="wrap">
+    <div class="head"><h2>Kontakt</h2></div>
+    <div class="contact-grid">
+      <div>
+        <span class="label">Adresse</span>
+        <p>nailcosmetica claudia ruhlé<br>Ziegelrain 8<br>5000 Aarau</p>
+        <a class="map-link" href="https://maps.google.com/?q=Ziegelrain+8+5000+Aarau" target="_blank" rel="noopener">Route planen</a>
+      </div>
+      <div>
+        <span class="label">Telefon und E-Mail</span>
+        <p><a href="tel:+41787072373">078 707 23 73</a><br><a href="mailto:mail@nailcosmetica.ch">mail@nailcosmetica.ch</a></p>
+      </div>
+      <div>
+        <span class="label">Termine</span>
+        <p>Nach Vereinbarung<br>per Telefon oder E-Mail</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 nailcosmetica claudia ruhlé · Ziegelrain 8, 5000 Aarau</span>
+    <span>Impressum und Datenschutz</span>
+  </div>
+</footer>
+<script>
+/* Anruf-Buttons: auf dem Handy anrufen, am Computer zum Kontakt-Bereich springen */
+if (!matchMedia("(pointer: coarse)").matches) {
+  document.querySelectorAll('a.btn[href^="tel:"]').forEach(function (a) { a.setAttribute("href", "#kontakt"); });
+}
+</script>
+</body>
+</html>
