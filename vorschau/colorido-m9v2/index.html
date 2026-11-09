@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="de-CH">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Colorido – Malerei in Baden</title>
+<meta name="description" content="Colorido: Malerei in Baden.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Inter:wght@400;500;600&display=swap">
+<style>
+/* Webblitz-Vorschlag: maler */
+:root{
+  --bg:#f8f7f3; --surface:#efece4; --ink:#1e1e1c; --muted:#5e5d58; --line:#dedbd1;
+  --brand:#c2410c; --brand-soft:#fbe2d4; --brand-ink:#ffffff;
+  --display:"Archivo",system-ui,sans-serif; --body:"Inter",system-ui,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.65 var(--body)}
+img{max-width:100%;display:block}
+a{color:inherit}
+.wrap{max-width:1080px;margin:0 auto;padding-left:max(18px,env(safe-area-inset-left));padding-right:max(18px,env(safe-area-inset-right))}
+h1,h2,h3{font-family:var(--display);line-height:1.08;margin:0;text-wrap:balance;font-weight:600}
+h2{font-size:clamp(1.9rem,4.5vw,2.7rem)}
+h3{font-size:1.3rem}
+p{margin:0}
+.btn{display:inline-block;background:var(--brand);color:var(--brand-ink);font-weight:600;padding:.9rem 1.5rem;border-radius:999px;text-decoration:none;letter-spacing:.01em}
+.btn.ghost{background:transparent;color:var(--brand);border:1.5px solid var(--brand)}
+.btn:focus-visible,a:focus-visible{outline:3px solid var(--brand);outline-offset:3px}
+header{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 94%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:14px}
+.logo{font:600 1.35rem/1.1 var(--display);text-decoration:none;min-width:0}
+nav{display:flex;gap:24px;font-weight:500;font-size:.95rem}
+nav a{text-decoration:none;color:var(--muted)}
+nav a:hover{color:var(--ink)}
+.call{font-weight:600;text-decoration:none;white-space:nowrap;color:var(--brand)}
+.hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center;padding-block:80px}
+.hero .wrap > *{min-width:0}
+.eyebrow{font-weight:600;letter-spacing:.16em;text-transform:uppercase;font-size:.75rem;color:var(--brand)}
+.hero h1{font-size:clamp(2.4rem,6.5vw,4.1rem);margin-top:14px}
+.hero h1 em{color:var(--brand)}
+.hero p.lead{margin-top:20px;font-size:1.12rem;color:var(--muted);max-width:38ch}
+.hero .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.hero-card{background:var(--surface);border-radius:10px;padding:28px;display:flex;flex-direction:column;gap:12px;text-align:left}
+.hero-card .label{font-size:.75rem;letter-spacing:.16em;text-transform:uppercase;color:var(--brand);font-weight:600}
+.hero-card p{color:var(--muted)}
+.hero-card b{display:block;font:600 1.5rem/1.2 var(--display);color:var(--ink)}
+section{padding-block:76px}
+.head{display:flex;flex-direction:column;gap:10px;margin-bottom:36px;max-width:48ch}
+.head p{color:var(--muted)}
+.services{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.service{background:#fff;border:1px solid var(--line);border-radius:10px;padding:28px;display:flex;flex-direction:column;gap:10px}
+.service p{color:var(--muted);font-size:.97rem}
+.service .num{font:italic 500 1.05rem/1 var(--display);color:var(--brand)}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.about > *{min-width:0}
+.about p{color:var(--muted);margin-top:16px}
+.photo{aspect-ratio:4/5;border-radius:10px;background:linear-gradient(160deg,var(--brand-soft),var(--surface));display:grid;place-items:center;color:var(--muted);font-size:.9rem;text-align:center;padding:24px}
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.gallery .photo{aspect-ratio:1;border-radius:16px}
+.contact{background:var(--surface)}
+.contact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.contact-grid > div{display:flex;flex-direction:column;gap:6px;min-width:0;overflow-wrap:anywhere}
+.contact-grid .label{font-size:.75rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--brand)}
+.map-link{margin-top:6px;font-weight:600;color:var(--brand)}
+footer{padding-block:28px;font-size:.85rem;color:var(--muted);border-top:1px solid var(--line)}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
+.preview-bar{background:#1f2326;color:#eef0f2;font-size:.85rem;text-align:center;padding:8px 16px}
+.preview-bar a{color:#ffd76a}
+@media (max-width:860px){
+  nav{display:none}
+  .hero .wrap,.about{grid-template-columns:1fr}
+  .services,.contact-grid{grid-template-columns:1fr}
+  .gallery{grid-template-columns:repeat(2,1fr)}
+  .hero .wrap{padding-block:52px}
+  section{padding-block:56px}
+}
+/* Handy-Menü */
+.menu-btn{display:none;width:44px;height:44px;border:0;background:transparent;color:inherit;cursor:pointer;border-radius:10px;position:relative}
+.menu-btn span{position:absolute;left:11px;right:11px;height:2px;background:currentColor;border-radius:2px;transition:transform .35s cubic-bezier(.2,.8,.2,1),opacity .2s}
+.menu-btn span:nth-child(1){top:15px}.menu-btn span:nth-child(2){top:21px}.menu-btn span:nth-child(3){top:27px}
+.menu-open .menu-btn span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+.menu-open .menu-btn span:nth-child(2){opacity:0}
+.menu-open .menu-btn span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+.menu-btn:focus-visible{outline:3px solid currentColor;outline-offset:2px}
+.mobile-menu{display:none}
+@media (max-width:860px){
+  .menu-btn{display:block}
+  header .call{display:none}
+  .mobile-menu{display:block;overflow:hidden;max-height:0;transition:max-height .45s cubic-bezier(.2,.8,.2,1)}
+  .menu-open .mobile-menu{max-height:420px}
+  .mobile-menu nav{display:flex;flex-direction:column;gap:0;padding:4px max(18px,env(safe-area-inset-left)) 18px}
+  .mobile-menu a{display:block;padding:14px 0;font-size:1.15rem;font-weight:600;text-decoration:none;border-bottom:1px solid rgba(127,127,127,.2);opacity:0;transform:translateY(-8px);transition:opacity .35s ease,transform .35s ease}
+  .menu-open .mobile-menu a{opacity:1;transform:none}
+  .menu-open .mobile-menu a:nth-child(2){transition-delay:.05s}
+  .menu-open .mobile-menu a:nth-child(3){transition-delay:.1s}
+  .menu-open .mobile-menu a:nth-child(4){transition-delay:.15s}
+  .menu-open .mobile-menu a:nth-child(5){transition-delay:.2s}
+}
+/* Sanfte Animationen beim Scrollen */
+.js-anim .reveal{opacity:0;transform:translateY(28px);transition:opacity .8s cubic-bezier(.2,.8,.2,1),transform .8s cubic-bezier(.2,.8,.2,1)}
+.js-anim .reveal.in{opacity:1;transform:none}
+.service{transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s ease}
+.service:hover{transform:translateY(-4px);box-shadow:0 14px 30px -18px rgba(0,0,0,.35)}
+.btn{transition:transform .25s ease,filter .25s ease}
+.btn:hover{transform:translateY(-2px);filter:brightness(1.06)}
+@media (prefers-reduced-motion:reduce){
+  .js-anim .reveal{opacity:1;transform:none;transition:none}
+  .service,.btn,.menu-btn span,.mobile-menu,.mobile-menu a{transition:none}
+  .service:hover,.btn:hover{transform:none}
+}
+</style>
+</head>
+<body>
+<div class="preview-bar">Unverbindlicher Vorschlag von <a href="https://webblitzch.github.io">Webblitz</a> – nur zur Ansicht</div>
+
+<header>
+  <div class="wrap">
+    <a class="logo" href="#">Colorido</a>
+    <nav><a href="#angebot">Leistungen</a><a href="#ueber-uns">Über uns</a><a href="#kontakt">Kontakt</a></nav>
+    <a class="call" href="tel:+41797979869">079 797 98 69</a>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow">Malerei in Baden</span>
+      <h1>Frische Farbe für Ihr <em>Zuhause.</em></h1>
+      <p class="lead">Sauber, zuverlässig und mit einem Auge fürs Detail. Für Wohnungen, Häuser und Geschäftsräume.</p>
+      <div class="cta">
+        <a class="btn" href="tel:+41797979869">Offerte anfragen</a>
+        <a class="btn ghost" href="#angebot">Leistungen ansehen</a>
+      </div>
+    </div>
+    <div class="hero-card">
+      <span class="label">Termine</span>
+      <b>nach Vereinbarung</b>
+      <p>Per Telefon oder E-Mail.<br>Öffnungszeiten folgen hier.</p>
+    </div>
+  </div>
+</div>
+
+<section id="angebot">
+  <div class="wrap">
+    <div class="head">
+      <h2>Unsere Leistungen</h2>
+      <p>Hier stehen später Ihre Arbeiten und Preise. Diese Beispiele passen wir gerne an Ihr Angebot an.</p>
+    </div>
+    <div class="services"><div class="service"><span class="num">i.</span><h3>Innenräume</h3><p>Wände und Decken frisch gestrichen, sauber abgedeckt und termingerecht.</p></div><div class="service"><span class="num">ii.</span><h3>Fassaden</h3><p>Schutz und neuer Glanz für Ihr Haus, mit hochwertigen Farben.</p></div><div class="service"><span class="num">iii.</span><h3>Renovationen</h3><p>Von kleinen Ausbesserungen bis zur kompletten Auffrischung.</p></div></div>
+  </div>
+</section>
+
+<section id="ueber-uns" style="padding-top:0">
+  <div class="wrap about">
+    <div class="photo">Hier kommt ein Foto von Ihnen oder Ihrem Betrieb</div>
+    <div>
+      <h2>Über uns</h2>
+      <p>Hier steht später ein kurzer Text über Ihren Betrieb, Ihre Erfahrung und Ihre Arbeitsweise.</p>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="head"><h2>Einblicke</h2><p>Platz für Fotos Ihrer schönsten Arbeiten.</p></div>
+    <div class="gallery">
+      <div class="photo">Foto 1</div><div class="photo">Foto 2</div><div class="photo">Foto 3</div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="kontakt">
+  <div class="wrap">
+    <div class="head"><h2>Kontakt</h2></div>
+    <div class="contact-grid">
+      <div>
+        <span class="label">Adresse</span>
+        <p>Colorido<br>Wiesenstrasse 3<br>5400 Baden</p>
+        <a class="map-link" href="https://maps.google.com/?q=Wiesenstrasse+3+5400+Baden" target="_blank" rel="noopener">Route planen</a>
+      </div>
+      <div>
+        <span class="label">Telefon und E-Mail</span>
+        <p><a href="tel:+41797979869">079 797 98 69</a><br><a href="mailto:colorido.malerei@gmail.com">colorido.malerei@gmail.com</a></p>
+      </div>
+      <div>
+        <span class="label">Termine</span>
+        <p>Nach Vereinbarung</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Colorido · Wiesenstrasse 3, 5400 Baden</span>
+    <span>Impressum und Datenschutz</span>
+  </div>
+</footer>
+<script>
+/* Anruf-Buttons: auf dem Handy anrufen, am Computer zum Kontakt-Bereich springen */
+if (!matchMedia("(pointer: coarse)").matches) {
+  document.querySelectorAll('a.btn[href^="tel:"]').forEach(function (a) { a.setAttribute("href", "#kontakt"); });
+}
+</script>
+<script>
+/* Handy-Menü öffnen und schliessen */
+(function () {
+  var header = document.querySelector("header"), nav = header && header.querySelector("nav");
+  if (!nav) return;
+  var btn = document.createElement("button");
+  btn.className = "menu-btn"; btn.type = "button";
+  btn.setAttribute("aria-label", "Menü öffnen"); btn.setAttribute("aria-expanded", "false");
+  btn.innerHTML = "<span></span><span></span><span></span>";
+  header.querySelector(".wrap").appendChild(btn);
+  var panel = document.createElement("div");
+  panel.className = "mobile-menu"; panel.id = "mobile-menu";
+  var copy = nav.cloneNode(true);
+  var call = header.querySelector(".call");
+  if (call) { var c = call.cloneNode(true); c.className = ""; c.textContent = "Anrufen: " + call.textContent; copy.appendChild(c); }
+  panel.appendChild(copy); header.appendChild(panel);
+  btn.setAttribute("aria-controls", "mobile-menu");
+  function set(open) {
+    header.classList.toggle("menu-open", open);
+    btn.setAttribute("aria-expanded", open ? "true" : "false");
+    btn.setAttribute("aria-label", open ? "Menü schliessen" : "Menü öffnen");
+  }
+  btn.addEventListener("click", function () { set(!header.classList.contains("menu-open")); });
+  panel.addEventListener("click", function (e) { if (e.target.closest("a")) set(false); });
+  document.addEventListener("keydown", function (e) { if (e.key === "Escape") set(false); });
+})();
+/* Bereiche gleiten beim Scrollen sanft ein */
+(function () {
+  if (!("IntersectionObserver" in window)) return;
+  var els = document.querySelectorAll(".head, .service, .about > *, .gallery > *, .contact-grid > div, .hero-card");
+  document.documentElement.classList.add("js-anim");
+  els.forEach(function (el, i) { el.classList.add("reveal"); el.style.transitionDelay = (i % 3) * 0.08 + "s"; });
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } });
+  }, { threshold: 0.12, rootMargin: "0px 0px -40px 0px" });
+  els.forEach(function (el) { io.observe(el); });
+  setTimeout(function () { els.forEach(function (el) { el.classList.add("in"); }); }, 4000);
+})();
+</script>
+</body>
+</html>
