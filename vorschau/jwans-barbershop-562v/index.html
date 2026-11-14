@@ -13,7 +13,7 @@
 :root{
   --bg:#0c0b0a;--bg2:#141210;--card:#1a1714;--line:#2b2621;
   --ink:#f3ede4;--muted:#a69c8f;--dim:#6f665b;
-  --brass:#c9a35c;--brass2:#e6c98a;--red:#b8352b;
+  --brass:#e3170a;--brass2:#ff5a4a;--red:#e3170a;
   --display:"Big Shoulders Display",Impact,sans-serif;
   --serif:"Instrument Serif",Georgia,serif;
   --sans:Manrope,system-ui,sans-serif;
@@ -32,7 +32,7 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:100;o
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
 
 /* proposal bar */
-.pbar{background:var(--brass);color:#14100a;font:600 13px/1.4 var(--sans);text-align:center;padding:8px 16px;position:relative;z-index:60}
+.pbar{background:var(--brass);color:#fff;font:600 13px/1.4 var(--sans);text-align:center;padding:8px 16px;position:relative;z-index:60}
 .pbar a{text-decoration:underline;text-underline-offset:2px}
 
 /* header */
@@ -40,6 +40,7 @@ header{position:sticky;top:0;z-index:50;transition:background .4s,backdrop-filte
 header.scrolled{background:rgba(12,11,10,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-color:var(--line)}
 .nav{display:flex;align-items:center;justify-content:space-between;height:74px}
 .logo{display:flex;align-items:center;gap:12px;font:900 26px/1 var(--display);letter-spacing:.04em;text-transform:uppercase}
+.logo .badge{width:40px;height:40px;border-radius:50%;background:var(--red);display:grid;place-items:center;font:900 10px/1 var(--display);color:#000;letter-spacing:.02em}
 .logo .pole{width:12px;height:30px;border-radius:6px;overflow:hidden;position:relative;border:1.5px solid var(--brass)}
 .logo .pole::before{content:"";position:absolute;inset:-30px 0;background:repeating-linear-gradient(-45deg,var(--red) 0 5px,#f3ede4 5px 10px,#2a4d8f 10px 15px,#f3ede4 15px 20px);animation:pole 2.4s linear infinite}
 @keyframes pole{to{transform:translateY(28px)}}
@@ -49,8 +50,8 @@ header.scrolled{background:rgba(12,11,10,.82);backdrop-filter:blur(14px);-webkit
 .links a::after{content:"";position:absolute;left:0;bottom:-6px;height:1px;width:100%;background:var(--brass);transform:scaleX(0);transform-origin:right;transition:transform .4s var(--ease)}
 .links a:hover{color:var(--ink)}.links a:hover::after{transform:scaleX(1);transform-origin:left}
 .btn{display:inline-flex;align-items:center;gap:10px;padding:14px 24px;border-radius:999px;font:700 14px/1 var(--sans);letter-spacing:.03em;transition:transform .3s var(--ease),background .3s,color .3s,box-shadow .3s;white-space:nowrap}
-.btn-brass{background:var(--brass);color:#120e08}
-.btn-brass:hover{background:var(--brass2);transform:translateY(-2px);box-shadow:0 12px 30px -10px rgba(201,163,92,.6)}
+.btn-brass{background:var(--brass);color:#fff}
+.btn-brass:hover{background:var(--brass2);transform:translateY(-2px);box-shadow:0 12px 30px -10px rgba(227,23,10,.6)}
 .btn-ghost{border:1px solid var(--line);color:var(--ink)}
 .btn-ghost:hover{border-color:var(--brass);color:var(--brass2)}
 .btn svg{width:16px;height:16px}
@@ -69,7 +70,7 @@ header.scrolled{background:rgba(12,11,10,.82);backdrop-filter:blur(14px);-webkit
 /* hero */
 .hero{position:relative;min-height:calc(100svh - 108px);display:flex;flex-direction:column;justify-content:flex-end;padding:40px 0 0;overflow:hidden}
 .hero-bg{position:absolute;inset:0;z-index:0;
-  background:radial-gradient(60% 60% at 78% 30%,rgba(201,163,92,.20),transparent 70%),radial-gradient(40% 50% at 10% 90%,rgba(184,53,43,.10),transparent 70%)}
+  background:radial-gradient(60% 60% at 78% 30%,rgba(227,23,10,.20),transparent 70%),radial-gradient(40% 50% at 10% 90%,rgba(184,53,43,.10),transparent 70%)}
 .hero-bg svg{position:absolute;right:-6%;top:6%;width:min(620px,70vw);opacity:.11;color:var(--brass);animation:float 12s ease-in-out infinite}
 @keyframes float{50%{transform:translateY(-18px) rotate(-3deg)}}
 .hero .wrap{position:relative;z-index:1}
@@ -116,13 +117,18 @@ h2 em{font:italic 400 1em/1 var(--serif);text-transform:none;color:var(--brass2)
 .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
 .ph{position:relative;border-radius:22px;overflow:hidden;background:
   linear-gradient(135deg,#1e1a16,#120f0d);border:1px solid var(--line);display:flex;align-items:flex-end;padding:22px}
-.ph::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(-45deg,transparent 0 22px,rgba(201,163,92,.035) 22px 23px)}
-.ph::after{content:"";position:absolute;inset:auto -20% -40% auto;width:70%;aspect-ratio:1;border-radius:50%;background:radial-gradient(rgba(201,163,92,.18),transparent 70%)}
+.ph::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(-45deg,transparent 0 22px,rgba(227,23,10,.035) 22px 23px)}
+.ph::after{content:"";position:absolute;inset:auto -20% -40% auto;width:70%;aspect-ratio:1;border-radius:50%;background:radial-gradient(rgba(227,23,10,.18),transparent 70%)}
 .ph .tag{position:relative;z-index:1;font:600 11px/1 var(--sans);letter-spacing:.24em;text-transform:uppercase;color:var(--brass);display:flex;align-items:center;gap:10px}
 .ph .tag svg{width:16px;height:16px}
-.ph .ic{position:absolute;inset:0;display:grid;place-items:center;z-index:1;color:rgba(201,163,92,.22)}
+.ph .ic{position:absolute;inset:0;display:grid;place-items:center;z-index:1;color:rgba(227,23,10,.22)}
 .ph .ic svg{width:34%;max-width:120px}
 .about-ph{aspect-ratio:4/5}
+.ph.img{padding:0}.ph.img::before,.ph.img::after{display:none}.ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease)}.ph:hover img{transform:scale(1.05)}
+.ph.img .tag{position:absolute;left:18px;bottom:18px;background:rgba(12,11,10,.75);backdrop-filter:blur(6px);padding:9px 12px;border-radius:999px;color:#fff}
+.gal4{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.gal4 .ph{aspect-ratio:4/5}.gal4 .ph:nth-child(even){transform:translateY(40px)}
+.ig{display:flex;justify-content:center;margin-top:80px}
+@media(max-width:900px){.gal4{grid-template-columns:1fr 1fr}.gal4 .ph:nth-child(even){transform:translateY(24px)}}
 .about-txt p{font-size:18px;color:var(--muted);margin-top:22px}
 .about-txt p.big{font:400 clamp(26px,3vw,38px)/1.2 var(--serif);color:var(--ink);margin-top:28px}
 .facts{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:18px;overflow:hidden;margin-top:44px}
@@ -134,7 +140,7 @@ h2 em{font:italic 400 1em/1 var(--serif);text-transform:none;color:var(--brass2)
 #angebot{background:var(--bg2);border-block:1px solid var(--line)}
 .svc{border-top:1px solid var(--line)}
 .svc-row{display:grid;grid-template-columns:70px 1fr auto;gap:24px;align-items:center;padding:30px 4px;border-bottom:1px solid var(--line);position:relative;transition:padding .45s var(--ease)}
-.svc-row::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(201,163,92,.08),transparent 70%);opacity:0;transition:opacity .4s}
+.svc-row::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(227,23,10,.08),transparent 70%);opacity:0;transition:opacity .4s}
 .svc-row:hover{padding-left:20px}.svc-row:hover::before{opacity:1}
 .svc-row .i{font:600 13px/1 var(--sans);color:var(--dim);letter-spacing:.1em}
 .svc-row h3{font:800 clamp(28px,3.4vw,44px)/1 var(--display);text-transform:uppercase;letter-spacing:.01em}
@@ -146,15 +152,15 @@ h2 em{font:italic 400 1em/1 var(--serif);text-transform:none;color:var(--brass2)
 /* gallery */
 .gal{display:grid;grid-template-columns:repeat(12,1fr);grid-auto-rows:120px;gap:14px}
 .gal .ph{transition:transform .6s var(--ease),border-color .4s}
-.gal .ph:hover{transform:scale(.98);border-color:rgba(201,163,92,.5)}
+.gal .ph:hover{transform:scale(.98);border-color:rgba(227,23,10,.5)}
 .g1{grid-column:span 5;grid-row:span 4}.g2{grid-column:span 4;grid-row:span 2}.g3{grid-column:span 3;grid-row:span 3}
 .g4{grid-column:span 4;grid-row:span 2}.g5{grid-column:span 3;grid-row:span 1}.g6{grid-column:span 12;grid-row:span 2}
 
 /* rating band */
 .band{padding:100px 0;text-align:center;position:relative;overflow:hidden}
-.band::before{content:"";position:absolute;inset:0;background:radial-gradient(50% 80% at 50% 50%,rgba(201,163,92,.12),transparent 70%)}
+.band::before{content:"";position:absolute;inset:0;background:radial-gradient(50% 80% at 50% 50%,rgba(227,23,10,.12),transparent 70%)}
 .band .wrap{position:relative}
-.band .score{font:900 clamp(120px,22vw,260px)/.85 var(--display);background:linear-gradient(180deg,var(--brass2),var(--brass) 60%,#7d6230);-webkit-background-clip:text;background-clip:text;color:transparent}
+.band .score{font:900 clamp(120px,22vw,260px)/.85 var(--display);background:linear-gradient(180deg,#ff6b5c,var(--brass) 60%,#7a0b04);-webkit-background-clip:text;background-clip:text;color:transparent}
 .band .stars{font-size:28px;letter-spacing:6px;margin:14px 0 10px}
 .band p{font:400 clamp(22px,2.6vw,30px)/1.3 var(--serif);color:var(--ink)}
 .band small{display:block;color:var(--dim);font-size:13px;margin-top:14px}
@@ -167,7 +173,7 @@ h2 em{font:italic 400 1em/1 var(--serif);text-transform:none;color:var(--brass2)
 .hours div{display:flex;justify-content:space-between;padding:13px 0;border-bottom:1px dashed var(--line);font-size:15px;color:var(--muted)}
 .hours div:last-child{border:0}
 .hours div.today{color:var(--ink);font-weight:700}
-.hours div.today span:first-child::after{content:"Heute";margin-left:10px;font:600 10px/1 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:#120e08;background:var(--brass);padding:4px 7px;border-radius:5px;vertical-align:2px}
+.hours div.today span:first-child::after{content:"Heute";margin-left:10px;font:600 10px/1 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:#fff;background:var(--brass);padding:4px 7px;border-radius:5px;vertical-align:2px}
 .contact-list{display:flex;flex-direction:column;gap:22px}
 .cl{display:flex;gap:18px;align-items:flex-start}
 .cl .ico{width:48px;height:48px;border-radius:14px;border:1px solid var(--line);display:grid;place-items:center;color:var(--brass);flex:none}
@@ -182,7 +188,7 @@ h2 em{font:italic 400 1em/1 var(--serif);text-transform:none;color:var(--brass2)
 .map::before{content:"";position:absolute;left:-10%;right:-10%;top:55%;height:26px;background:#1f1b17;transform:rotate(-8deg)}
 .map::after{content:"";position:absolute;top:-10%;bottom:-10%;left:38%;width:18px;background:#1f1b17;transform:rotate(12deg)}
 .pin{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;gap:10px}
-.pin i{width:20px;height:20px;border-radius:50% 50% 50% 0;background:var(--brass);transform:rotate(-45deg);box-shadow:0 0 0 8px rgba(201,163,92,.18)}
+.pin i{width:20px;height:20px;border-radius:50% 50% 50% 0;background:var(--brass);transform:rotate(-45deg);box-shadow:0 0 0 8px rgba(227,23,10,.18)}
 .pin span{font:600 12px/1 var(--sans);background:var(--bg);border:1px solid var(--line);padding:8px 12px;border-radius:999px}
 
 /* cta */
@@ -232,12 +238,12 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
 </head>
 <body>
 
-<div class="pbar">Unverbindlicher Vorschlag von <a href="https://webblitzch.github.io" target="_blank" rel="noopener">Webblitz</a> · Fotos, Preise und Texte passen wir gerne an.</div>
+<div class="pbar">Unverbindlicher Vorschlag von <a href="https://webblitzch.github.io" target="_blank" rel="noopener">Webblitz</a> · Fotos von @jwans_mhs, Preise und Texte passen wir gerne an.</div>
 
 <header id="top">
   <div class="wrap nav">
     <a href="#" class="logo" aria-label="Jwan's Barbershop">
-      <span class="pole" aria-hidden="true"></span>
+      <span class="badge" aria-hidden="true">JWAN'S</span>
       <span>Jwan's<small>Barbershop</small></span>
     </a>
     <nav class="links">
@@ -270,7 +276,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
     <span class="eyebrow fade-in">Hauptgasse 7 · Mellingen</span>
     <h1 class="h-title" aria-label="Jwan's Barbershop">
       <span class="ln"><span>Jwan's</span></span>
-      <span class="ln"><span class="outline">Barbers</span></span>
+      <span class="ln"><span class="outline">Barber</span></span>
     </h1>
     <div class="h-row fade-in">
       <p class="h-lead">Saubere Fades, scharfe Konturen und ein Bart, der sitzt. <em>Mitten in der Altstadt von Mellingen.</em></p>
@@ -292,23 +298,17 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
 </section>
 
 <div class="marquee" aria-hidden="true">
-  <div class="track">
-    <span>Skin Fade</span><span>Bart trimmen</span><span>Konturen</span><span>Klassischer Schnitt</span><span>Hot Towel</span><span>Kids Cut</span>
-    <span>Skin Fade</span><span>Bart trimmen</span><span>Konturen</span><span>Klassischer Schnitt</span><span>Hot Towel</span><span>Kids Cut</span>
-  </div>
+  <div class="track"><span>Haare</span><span>Bart</span><span>Haare &amp; Bart</span><span>Augenbrauen</span><span>Afro</span><span>Perm</span><span>Haare</span><span>Bart</span><span>Haare &amp; Bart</span><span>Augenbrauen</span><span>Afro</span><span>Perm</span></div>
 </div>
 
 <section id="about">
   <div class="wrap about-grid">
-    <div class="ph about-ph rv">
-      <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><circle cx="6" cy="18" r="3"/><circle cx="18" cy="18" r="3"/><path d="M8 16 20 3M16 16 4 3"/></svg></div>
-      <span class="tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="6" width="18" height="14" rx="2"/><circle cx="12" cy="13" r="3.5"/><path d="M8 6l1.5-2h5L16 6"/></svg>Foto: Jwan bei der Arbeit</span>
-    </div>
+    <div class="ph about-ph img rv"><img src="img/shop.jpg" alt="Im Laden von Jwan's Barbershop" loading="lazy"><span class="tag">Hauptgasse 7</span></div>
     <div class="about-txt">
       <span class="num rv">01 · Über uns</span>
       <h2 class="rv d1">Handwerk mit <em>Präzision.</em></h2>
       <p class="big rv d2">Bei Jwan's zählt jeder Millimeter. Wir nehmen uns Zeit, hören zu und schneiden so, wie es zu dir passt.</p>
-      <p class="rv d3">Ob klassischer Herrenschnitt, moderner Skin Fade oder gepflegter Bart: Du gehst raus, wie du reingekommen bist, nur besser. Entspannte Atmosphäre, faire Preise und ein Team, das sein Handwerk liebt.</p>
+      <p class="rv d3">Ob Fade, Afro, Perm oder gepflegter Bart: Du gehst raus, wie du reingekommen bist, nur besser. Entspannte Atmosphäre, faire Preise und ein Team, das sein Handwerk liebt.</p>
       <div class="facts rv d3">
         <div class="fact"><b data-count="4.8" data-dec="1">4.8</b><span>Google-Sterne</span></div>
         <div class="fact"><b data-count="75">75</b><span>Bewertungen</span></div>
@@ -325,13 +325,14 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
       <p class="rv d2">Eine Auswahl unserer Leistungen. Komm vorbei oder ruf an, wir beraten dich gerne.</p>
     </div>
     <div class="svc">
-      <div class="svc-row rv"><span class="i">01</span><div><h3>Herrenschnitt</h3><p>Waschen, Schneiden, Styling. Klassisch oder modern.</p></div><div class="price">CHF –<small>Preis folgt</small></div></div>
-      <div class="svc-row rv"><span class="i">02</span><div><h3>Skin Fade</h3><p>Nahtloser Übergang bis auf die Haut, sauber ausrasiert.</p></div><div class="price">CHF –<small>Preis folgt</small></div></div>
-      <div class="svc-row rv"><span class="i">03</span><div><h3>Bart</h3><p>Trimmen, Formen und Konturen mit dem Messer.</p></div><div class="price">CHF –<small>Preis folgt</small></div></div>
-      <div class="svc-row rv"><span class="i">04</span><div><h3>Schnitt + Bart</h3><p>Das Komplettpaket für den perfekten Look.</p></div><div class="price">CHF –<small>Preis folgt</small></div></div>
-      <div class="svc-row rv"><span class="i">05</span><div><h3>Kinder</h3><p>Für die Kleinen, mit Geduld und Spass.</p></div><div class="price">CHF –<small>Preis folgt</small></div></div>
+      <div class="svc-row rv"><span class="i">01</span><div><h3>Haare</h3><p>Schnitt nach Wunsch, vom klassischen Look bis zum Skin Fade.</p></div><div class="price">CHF –<small>Preis folgt</small></div></div>
+      <div class="svc-row rv"><span class="i">02</span><div><h3>Bart</h3><p>Trimmen, Formen und saubere Konturen.</p></div><div class="price">CHF –<small>Preis folgt</small></div></div>
+      <div class="svc-row rv"><span class="i">03</span><div><h3>Haare &amp; Bart</h3><p>Das Komplettpaket für den perfekten Look.</p></div><div class="price">CHF –<small>Preis folgt</small></div></div>
+      <div class="svc-row rv"><span class="i">04</span><div><h3>Augenbrauen</h3><p>Sauber in Form gebracht.</p></div><div class="price">CHF –<small>Preis folgt</small></div></div>
+      <div class="svc-row rv"><span class="i">05</span><div><h3>Afro &amp; Perm</h3><p>Afro-Schnitte und Dauerwelle für Locken mit Stil.</p></div><div class="price">CHF –<small>Preis folgt</small></div></div>
+      
     </div>
-    <p class="note">Leistungen und Preise sind Platzhalter und werden mit Jwan's Angaben ersetzt.</p>
+    <p class="note">Leistungen gemäss Tafel im Laden. Die Preise setzen wir mit Jwan's Angaben ein.</p>
   </div>
 </section>
 
@@ -339,16 +340,15 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
   <div class="wrap">
     <div class="sec-head">
       <div><span class="num rv">03 · Galerie</span><h2 class="rv d1">Frisch <em>geschnitten.</em></h2></div>
-      <p class="rv d2">Hier kommen eure besten Schnitte rein, direkt von Instagram oder vom Handy.</p>
+      <p class="rv d2">Ein paar Schnitte aus dem Laden. Täglich neue auf Instagram.</p>
     </div>
-    <div class="gal">
-      <div class="ph g1 rv"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="6" width="18" height="14" rx="2"/><circle cx="12" cy="13" r="3.5"/></svg></div><span class="tag">Fade von hinten</span></div>
-      <div class="ph g2 rv d1"><span class="tag">Der Laden</span></div>
-      <div class="ph g3 rv d2"><span class="tag">Bart-Detail</span></div>
-      <div class="ph g4 rv d1"><span class="tag">Werkzeug</span></div>
-      <div class="ph g5 rv d2"><span class="tag">Stuhl</span></div>
-      <div class="ph g6 rv d3"><span class="tag">Vorher / Nachher</span></div>
+    <div class="gal4">
+      <div class="ph img rv"><img src="img/fade.jpg" alt="Fade mit Hairline" loading="lazy"><span class="tag">Fade</span></div>
+      <div class="ph img rv d1"><img src="img/bart.jpg" alt="Bart in Form" loading="lazy"><span class="tag">Bart</span></div>
+      <div class="ph img rv d2"><img src="img/blond.jpg" alt="Blonder Kurzhaarschnitt" loading="lazy"><span class="tag">Color</span></div>
+      <div class="ph img rv d3"><img src="img/shop.jpg" alt="Schnitt im Laden" loading="lazy" style="object-position:50% 70%"><span class="tag">Mullet</span></div>
     </div>
+    <div class="ig rv"><a class="btn btn-ghost" href="https://www.instagram.com/jwans_mhs/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>Mehr auf Instagram · @jwans_mhs</a></div>
   </div>
 </section>
 
@@ -383,6 +383,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
         <h3>Kontakt</h3>
         <div class="contact-list">
           <div class="cl"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg></span><div><small>Telefon</small><a href="tel:+41795599892">079 559 98 92</a></div></div>
+          <div class="cl"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/></svg></span><div><small>Instagram</small><a href="https://www.instagram.com/jwans_mhs/" target="_blank" rel="noopener">@jwans_mhs</a></div></div>
           <div class="cl"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg></span><div><small>Adresse</small><span class="v">Hauptgasse 7, 5507 Mellingen</span></div></div>
         </div>
         <a class="map" href="https://www.google.com/maps/search/?api=1&query=Jwan%27s+Barbershop+Hauptgasse+7+5507+Mellingen" target="_blank" rel="noopener" aria-label="In Google Maps öffnen">
